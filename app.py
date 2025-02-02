@@ -1,11 +1,11 @@
+import os
 from flask import Flask, request, jsonify
 import requests
-import os
 
 app = Flask(__name__)
 
 # Replace this with your GroupMe bot's ID
-BOT_ID = "YOUR_BOT_ID_HERE"
+BOT_ID = "abb2f84c6d3e802d24ffcfe884"
 
 # Function to send a message to GroupMe
 def send_message(text):
@@ -30,5 +30,5 @@ def webhook():
     return jsonify({"message": "No action taken"}), 200
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))  # Use the correct port Render assigns
     app.run(host="0.0.0.0", port=port)
